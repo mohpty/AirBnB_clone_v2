@@ -7,7 +7,6 @@ from datetime import datetime
 from fabric.api import *
 
 
-
 def do_pack():
     """
     making an archive on web_static directory
