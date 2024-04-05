@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/python3
 # Bash script that setup web servers for deployment of web_static
 apt-get update
 apt-get install -y nginx

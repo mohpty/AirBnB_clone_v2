@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/python3
 """Compress web static package
 """
 from fabric.api import *
