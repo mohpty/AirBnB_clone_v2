@@ -1,7 +1,8 @@
-#!/usr/bin/python3
-# Bash script that setup web servers for deployment of web_static
-apt-get update
-apt-get install -y nginx
+#!/usr/bin/env bash
+# Script that sets up web servers for the deployment of web_static
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
 
 mkdir -p /data/web_static/releases/test/
 mkdir -p /data/web_static/shared/
