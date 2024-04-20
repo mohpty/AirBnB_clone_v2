@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that distributes an archive to the servers
+Script that a distributes an archive to the servers
 """
 
 
