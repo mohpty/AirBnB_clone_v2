@@ -9,31 +9,31 @@ import os
 
 
 class test_basemodel(unittest.TestCase):
-    """ """
+    """basemodel test """
 
     def __init__(self, *args, **kwargs):
-        """ """
+        """ init """
         super().__init__(*args, **kwargs)
         self.name = 'BaseModel'
         self.value = BaseModel
 
     def setUp(self):
-        """ """
+        """ setup """
         pass
 
     def tearDown(self):
         try:
             os.remove('file.json')
-        except:
+        except c:
             pass
 
     def test_default(self):
-        """ """
+        """ default test"""
         i = self.value()
         self.assertEqual(type(i), self.value)
 
     def test_kwargs(self):
-        """ """
+        """ test args"""
         i = self.value()
         copy = i.to_dict()
         new = BaseModel(**copy)
