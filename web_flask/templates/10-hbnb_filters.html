@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HBNB Filters</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/3-header.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/3-footer.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/4-common.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/6-filters.css') }}" type="text/css">
+</head>
+<body>
+    <header class="clearfix">
+        <div class="logo_container">
+            <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="AirBnB_Logo">
+        </div>
+    </header>
+    <div class="filters">
+        <h1>Places</h1>
+        <h3 class="h3_filter" id="filter_title">States</h3>
+        <div class="popover">
+            <button class="button_filter" id="state_filter" onclick="filter('state');">
+                <input class="checkbox" type="checkbox" id="check_states">
+                <label class="popover_filter_label" for="check_states">States</label>
+            </button>
+            <br>
+            <div class="filter_states">
+                {% for state in states %}
+                    <div class="locations">
+                        <label class="popover_filter_label" for="state">{{ state.name }}</label>
+                        <input class="checkbox" type="checkbox" id="state" name="state" value="{{ state.id }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <h3 class="h3_filter" id="filter_title">Cities</h3>
+        <div class="popover">
+            <button class="button_filter" id="city_filter" onclick="filter('city');">
+                <input class="checkbox" type="checkbox" id="check_cities">
+                <label class="popover_filter_label" for="check_cities">Cities</label>
+            </button>
+            <br>
+            <div class="filter_cities">
+                {% for city in cities %}
+                    <div class="locations">
+                        <label class="popover_filter_label" for="city">{{ city.name }}</label>
+                        <input class="checkbox" type="checkbox" id="city" name="city" value="{{ city.id }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <h3 class="h3_filter" id="filter_title">Amenities</h3>
+        <div class="popover">
+            <button class="button_filter" id="amenity_filter" onclick="filter('amenity');">
+                <input class="checkbox" type="checkbox" id="check_amenities">
+                <label class="popover_filter_label" for="check_amenities">Amenities</label>
+            </button>
+            <br>
+            <div class="filter_amenities">
+                {% for amenity in amenities %}
+                    <div class="locations">
+                        <label class="popover_filter_label" for="amenity">{{ amenity.name }}</label>
+                        <input class="checkbox" type="checkbox" id="amenity" name="amenity" value="{{ amenity.id }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer_container">
+            <img class="footer_logo" src="{{ url_for('static', filename='images/icon.png') }}" alt="AirBnB_Icon">
+            <p>&copy; 2024 - Holberton School</p>
+        </div>
+    </footer>
+</body>
+</html>
